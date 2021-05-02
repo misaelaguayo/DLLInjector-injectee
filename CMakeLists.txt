@@ -2,13 +2,15 @@ cmake_minimum_required(VERSION 3.0)
 
 project(makefile_dll)
 
+#This must be defined to include <windows.h>
 add_definitions(-D_WIN32_WINNT=0x0502)
 
+#compile the project for 32 bit
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32")
 SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} -m32")
 
 set(dll-injector_src
-	"src/injector.cpp"
+	"src/injector/injector.cpp"
 )
 
 set(dll-injector_lib
