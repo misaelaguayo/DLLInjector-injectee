@@ -1,0 +1,8 @@
+first create the object files
+Then with the linker, specify that we need to link the console object file and
+dll object file. We also need the standard library to be linked which is -lstdc++
+finally we need to specify that this build is for x86 which is -m32
+
+1.) gcc -c -o dll.o dll.cpp -m32 -lstdc++
+2.) gcc -c -o console.o console.cc -m32
+3.) gcc -o dll.dll -s -shared dll.o console.o -Wl,--subsystem,windows -m32 -lstdc++
