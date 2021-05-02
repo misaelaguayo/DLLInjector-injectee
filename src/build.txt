@@ -1,2 +1,0 @@
-1. run vcvars32.bat
-2. cl.exe injector.cpp
